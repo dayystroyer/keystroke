@@ -1,0 +1,107 @@
+local MSC_PART_2_REF = gui.Reference( "MISC", "Part 2" );
+local ksgroup = gui.Groupbox( MSC_PART_2_REF, "KeyStrokes", 0, 1300, 213, 75 );
+local enableks = gui.Checkbox( ksgroup, "lua_keystrokes_enable", "Enable", 1 );
+local outlines = gui.Checkbox( ksgroup, "lua_keystrokes_outline", "Outlines", 0 );
+ 
+function draw_buttons()
+if entities.GetLocalPlayer() == nil then
+      return
+end
+local x, y = draw.GetScreenSize()
+local classicf = draw.CreateFont('Tahoma bold', 40)
+draw.SetFont(classicf)
+if enableks:GetValue() then
+           if input.IsButtonDown( 87 ) then
+           draw.Color(150, 255, 70, 230)
+           draw.Text(103, 398, "w")
+            if outlines:GetValue() then
+           draw.Color(150, 255, 70, 180)
+           draw.OutlinedRect(93, 400, 138, 443)
+            end
+           draw.Color(255, 255, 255, 50)
+           draw.FilledRect(93, 400, 138, 443)
+           else
+           draw.Color(255, 255, 255, 230)
+           draw.Text(103, 398, "w")
+           draw.Color(255, 255, 255, 30)
+           draw.FilledRect(93, 400, 138, 443)
+           end
+          if input.IsButtonDown( 83 ) then
+           draw.Color(150, 255, 70, 230)
+           draw.Text(106, 450, "s")
+            if outlines:GetValue() then
+           draw.Color(150, 255, 70, 180)
+           draw.OutlinedRect(93, 450, 138, 493)
+           end
+           draw.Color(255, 255, 255, 50)
+           draw.FilledRect(93, 450, 138, 493)
+           else
+           draw.Color(255, 255, 255, 230)
+           draw.Text(106, 450, "s")
+           draw.Color(255, 255, 255, 30)
+           draw.FilledRect(93, 450, 138, 493)
+           end
+          if input.IsButtonDown( 65 ) then
+           draw.Color(150, 255, 70, 230)
+           draw.Text(56, 450, "a")
+            if outlines:GetValue() then
+           draw.Color(150, 255, 70, 180)
+           draw.OutlinedRect(43, 450, 88, 493)
+            end
+           draw.Color(255, 255, 255, 50)
+           draw.FilledRect(43, 450, 88, 493)
+           else
+           draw.Color(255, 255, 255, 230)
+           draw.Text(56, 450, "a")
+           draw.Color(255, 255, 255, 30)
+           draw.FilledRect(43, 450, 88, 493)
+           end
+          if input.IsButtonDown( 68 ) then
+           draw.Color(150, 255, 70, 230)
+           draw.Text(156, 450, "d")
+            if outlines:GetValue() then
+           draw.Color(150, 255, 70, 180)
+           draw.OutlinedRect(143, 450, 188, 493)
+            end
+           draw.Color(255, 255, 255, 50)
+           draw.FilledRect(143, 450, 188, 493)
+           else
+           draw.Color(255, 255, 255, 230)
+           draw.Text(156, 450, "d")
+           draw.Color(255, 255, 255, 30)
+           draw.FilledRect(143, 450, 188, 493)
+           end
+          if input.IsButtonDown( 32 ) then
+           draw.Color(150, 255, 70, 230)
+           draw.Text(70, 492, "space")
+            if outlines:GetValue() then
+           draw.Color(150, 255, 70, 180)
+           draw.OutlinedRect(43, 498, 188, 533)
+            end
+           draw.Color(255, 255, 255, 50)
+           draw.FilledRect(43, 498, 188, 533)
+           else
+           draw.Color(255, 255, 255, 230)
+           draw.Text(70, 492, "space")
+           draw.Color(255, 255, 255, 30)
+           draw.FilledRect(43, 498, 188, 533)
+           end
+          if input.IsButtonDown( 16 ) then
+           draw.Color(150, 255, 70, 230)
+           draw.Text(80, 536, "shift")
+            if outlines:GetValue() then
+           draw.Color(150, 255, 70, 180)
+           draw.OutlinedRect(43, 538, 188, 573)
+            end
+           draw.Color(255, 255, 255, 50)
+           draw.FilledRect(43, 538, 188, 573)
+           else
+           draw.Color(255, 255, 255, 230)
+           draw.Text(80, 536, "shift")
+           draw.Color(255, 255, 255, 30)
+           draw.FilledRect(43, 538, 188, 573)
+           end
+    end
+end
+ 
+callbacks.Register('Draw', 'draw_buttons', draw_buttons)
